@@ -95,7 +95,11 @@ exports.listUser= async (req, res) => {
             limit: limit,
             order: [
                 ['date', 'ASC']
-            ]
+            ],
+            include : [{
+                model: Post,
+                as: 'Post'
+            }]
         })
 
         const data={
